@@ -1,0 +1,50 @@
+/* pages/news/news.wxss */
+page,
+.page,
+.page__bd{
+  background: white;
+    height: 100%;
+}
+.page__bd{
+    padding-bottom: 0;
+}
+.weui-navbar{
+  background: white;
+}
+.weui-tab__content{
+    display: flex;
+    flex-direction: column;
+}
+.news_content{
+  background: white;
+  margin: 0px 10px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  border-bottom:  #d3d3d3 solid 1rpx
+
+}
+.title{
+  line-height:40rpx;
+  font-size: 30rpx;
+}
+.thumb_content{
+  padding-top: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.new_info{
+  padding-top: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.info_text{
+  font-size: 25rpx;
+  line-height: 25rpx;
+  color: gainsboro;
+}
+

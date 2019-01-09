@@ -1,0 +1,6 @@
+page,
+.page,
+.page__bd{
+  background: white;
+  height: 100%;
+}
