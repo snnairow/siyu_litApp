@@ -3,7 +3,7 @@
 var sliderWidth = 10; // 需要设置slider的宽度，用于计算中间位置
 import api from '../../http/juheApi.js'
 import newUrl from '../../http/juheUrls.js'
- 
+
 Page({
 
   /**
@@ -56,21 +56,10 @@ Page({
     sliderOffset: 0,
     sliderLeft: 0,
     avgWidth: 0,
-    imageWidth:0,
+    imageWidth: 0,
     imageHeight: 0,
-    news: [
-      // {
-      //   uniquekey: "9dcdafe023c8135d60413da251f16cdf",
-      //   title: "王者荣耀》：一楼李白，四楼：不打野就送，看完战绩四楼闭嘴了",
-      //   date: "2019-01-09 13:25",
-      //   category: "头条",
-      //   author_name: "糖糖游戏解说",
-      //   url: "http:\/\/mini.eastday.com\/mobile\/190109132504117.html",
-      //   thumbnail_pic_s: "http:\/\/03imgmini.eastday.com\/mobile\/20190109\/20190109132504_fc757783fdac2024437d926e66c4e683_1_mwpm_03200403.jpg",
-      //   thumbnail_pic_s02: "http:\/\/03imgmini.eastday.com\/mobile\/20190109\/20190109132504_fc757783fdac2024437d926e66c4e683_3_mwpm_03200403.jpg",
-      //   thumbnail_pic_s03: "http:\/\/03imgmini.eastday.com\/mobile\/20190109\/20190109132504_fc757783fdac2024437d926e66c4e683_2_mwpm_03200403.jpg"
-      // }
-      ]
+    isPullDown: false,
+    news: []
   },
 
   /**
@@ -84,11 +73,10 @@ Page({
           sliderLeft: (res.windowWidth / that.data.tabs.length - sliderWidth) / 2,
           sliderOffset: res.windowWidth / that.data.tabs.length * that.data.activeIndex,
           avgWidth: res.windowWidth / that.data.tabs.length,
-          imageWidth: (res.windowWidth -40-10)/3,
+          imageWidth: (res.windowWidth - 40 - 10) / 3,
         });
         that.setData({
-         
-          imageHeight: that.data.imageWidth*3/4,
+          imageHeight: that.data.imageWidth * 3 / 4,
         });
         console.log(that.data.imageWidth)
         console.log(that.data.imageHeight)
@@ -96,14 +84,24 @@ Page({
     });
     this.getNews();
   },
-  getNews:function(){
+  getNews: function() {
     api.get(newUrl.news, {
       type: this.data.tabs[this.data.activeIndex].type
     }).then(res => {
       console.log(res);
-      this.setData({
-        news: res.result.data
-      })
+      if (this.data.isPullDown) {
+        wx.stopPullDownRefresh();
+        this.setData({
+          isPullDown: false,
+          news: res.result.data
+        })
+      } else {
+        this.setData({
+          news: this.data.news.concat(res.result.data)
+        })
+      }
+
+
     });
   },
   tabClick: function(e) {
@@ -146,13 +144,19 @@ Page({
    */
   onPullDownRefresh: function() {
 
+    this.setData({
+      isPullDown: true
+    })
+
+    this.getNews();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    console.log("到达底部了");
+    this.getNews();
   },
 
   /**

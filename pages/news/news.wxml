@@ -13,14 +13,14 @@
 
         <view class="weui-navbar__slider" style="width:{{avgWidth}}px;left: 0px; right:0px; transform: translateX({{sliderOffset}}px); -webkit-transform: translateX({{sliderOffset}}px);"></view>
       </view>
-      <view class="weui-tab__panel">
+      <view class="news_body_content">
         <view class="weui-tab__content" wx:for="{{news}}">
           <view class='news_content'>
             <text class='title'>{{item.title}}</text>
             <view class='thumb_content'>
               <image style="width:{{imageWidth}}px; height:{{imageHeight}}px;" mode="aspectFit" src="{{item.thumbnail_pic_s}}"></image>
               <image style="width:{{imageWidth}}px; height:{{imageHeight}}px;" mode="aspectFit" src="{{item.thumbnail_pic_s02}}"></image>
-              <image style="width:{{imageWidth}}px; height:{{imageHeight}}px;" mode="aspectFit" src="{{item.thumbnail_pic_s03}}"></image>
+              <image style="width:{{imageWidth}}px; height:{{imageHeight}}px;background-color: #eeeeee;" mode="aspectFit" src="{{item.thumbnail_pic_s03}}"></image>
             </view>
             <view class='new_info'>
               <text class='info_text'>发布时间：{{item.date}}</text>
