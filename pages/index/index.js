@@ -21,6 +21,11 @@ Page({
       url: '../news/news'
     })
   },
+    goLogin:function(){
+    wx.navigateTo({
+      url: '../login/login'
+    })
+  },
   onLoad: function () {
    
   },

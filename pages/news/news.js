@@ -1,4 +1,4 @@
-// pages/news/news.js
+// pages/news/login.js
 
 var sliderWidth = 10; // 需要设置slider的宽度，用于计算中间位置
 import api from '../../http/juheApi.js'

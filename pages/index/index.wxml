@@ -2,5 +2,6 @@
 <view class="page">
 <view class="page">
     <button bindtap='goNews' > 热点新闻 </button>
+    <button bindtap='goLogin' > 登录 </button>
 </view>
 </view>

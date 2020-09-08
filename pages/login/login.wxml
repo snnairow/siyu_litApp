@@ -1,0 +1,9 @@
+<!--pages/news/news.wxml-->
+
+<view class="page">
+  <view class="page_content">
+    <image style="width:300rpx; height:300rpx;" mode="aspectFit" src="{{loginlogo}}"></image>
+
+  </view>
+
+</view>
