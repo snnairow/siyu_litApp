@@ -1,5 +1,5 @@
 {
-  "name": "siyu_litApp",
+  "name": "siyu_litapp",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
@@ -10,7 +10,6 @@
     "type": "git",
     "url": "git+https://github.com/snnairow/siyu_litApp.git"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -18,6 +17,7 @@
   },
   "homepage": "https://github.com/snnairow/siyu_litApp#readme",
   "dependencies": {
-    "@vant/weapp": "^1.5.0"
+    "@vant/weapp": "^1.5.0",
+    "vant-weapp": "^0.5.28"
   }
 }

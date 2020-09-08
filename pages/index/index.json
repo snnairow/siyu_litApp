@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "van-field": "vant-weapp/field",
+    "van-cell-group": "vant-weapp/cell-group"  }
 }

@@ -1,4 +1,9 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "van-field": "vant-weapp/field",
+    "van-cell-group": "vant-weapp/cell-group",
+    "van-icon": "vant-weapp/icon",
+    "van-button": "vant-weapp/button"
+  },
   "navigationBarTitleText": "个人注册"
 }
